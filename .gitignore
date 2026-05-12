@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+wallpapers/
+.DS_Store
