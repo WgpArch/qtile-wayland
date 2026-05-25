@@ -14,5 +14,9 @@
 ---
 
 
-
 ## 📸 Screenshots
+
+![Screenshot 1](Screenshot_2026-05-24_19-46-51.png)
+![Screenshot 2](Screenshot_2026-05-24_19-46-57.png)
+![Screenshot 3](Screenshot_2026-05-24_19-47-00.png)
+![Screenshot 4](Screenshot_2026-05-24_19-47-07.png)
