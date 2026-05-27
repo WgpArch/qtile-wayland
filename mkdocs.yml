@@ -1,0 +1,18 @@
+site_name: WgpArch Qtile Wayland Config
+site_url: https://wgparch.codeberg.page/qtile-wayland/
+theme:
+  name: material
+  palette:
+    primary: cyan
+    accent: light blue
+  features:
+    - navigation.tabs
+    - navigation.expand
+nav:
+  - Home: index.md
+  - Credits & Attribution: credits.md
+  - Installation: installation.md
+  - Waybar Integration: waybar.md
+  - Keybinds: keybinds.md
+  - Look & Feel: theming.md
+  - Gallery: gallery.md
