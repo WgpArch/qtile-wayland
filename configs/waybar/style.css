@@ -1,0 +1,122 @@
+* {
+    border: none;
+    border-radius: 8px;
+    font-family: "Z003", "JetBrains Mono", "Font Awesome 6 Free", sans-serif;
+    font-size: 12px;
+    min-height: 0px;
+}
+
+window#waybar {
+    background-color: #000000;
+    color: #00ffff;
+    border-bottom: 2px solid #00ffff;
+    margin: 0;
+    padding: 0 4px;
+}
+
+/* ========== ALL MODULES BASE ========== */
+#clock, #custom-weather, #cpu, #memory, #battery, #pulseaudio, #tray, #custom-launcher, #temperature, #custom-player, #custom-notification {
+    background-color: #000000;
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    padding: 0 10px;
+    margin: 2px 4px;
+    transition: all 0.2s ease;
+}
+
+/* ========== WORKSPACE CONTAINER ========== */
+#custom-qtile-groups {
+    background-color: #000000;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    padding: 2px 6px;
+    margin: 2px 4px;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* ========== LAUNCHER ========== */
+#custom-launcher {
+    padding: 0 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
+#custom-launcher:hover { 
+    background-color: #00ffff; 
+    color: #000000;
+}
+
+/* ========== CLOCK ========== */
+#clock {
+    font-weight: 700;
+    font-family: "Z003", "JetBrains Mono", monospace;
+}
+
+/* ========== SYSTEM MODULES ========== */
+#cpu, #memory, #battery, #pulseaudio, #temperature {
+    padding: 0 10px;
+}
+
+#battery.critical { 
+    color: #ef5350; 
+    border-color: #ef5350; 
+    animation: pulse 1s infinite;
+}
+#pulseaudio.muted { 
+    color: #ef5350; 
+    border-color: #ef5350;
+}
+
+/* ========== CUSTOM PLAYER & NOTIFICATION ========== */
+#custom-player, #custom-notification {
+    font-weight: 600;
+    padding: 0 12px;
+}
+#custom-notification {
+    font-size: 14px; /* Aligns bell icon vertically */
+}
+
+/* ========== TRAY ========== */
+#tray {
+    padding: 0 8px;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* ========== TOOLTIP ========== */
+tooltip {
+    background-color: #000000;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    padding: 8px;
+}
+tooltip label { 
+    color: #00ffff; 
+    font-family: "JetBrains Mono", monospace;
+}
+
+/* ========== HOVER STATES ========== */
+#cpu:hover, #memory:hover, #battery:hover, #pulseaudio:hover, #temperature:hover, #custom-player:hover, #custom-notification:hover, #custom-power:hover {
+    background-color: #001111;
+    border-color: #ffffff;
+}
+
+/* ========== LAUNCHER ========== */
+#custom-power {
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    padding: 0 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+#custom-power:hover {
+    background-color: #00ffff;
+    color: #000000;
+}

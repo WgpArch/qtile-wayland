@@ -1,0 +1,125 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 0,
+    "width": 0,
+    "margin-top": 0,
+    "margin-left": "auto",
+    "margin-right": "auto",
+    "modules-left": ["custom/launcher", "custom/qtile-groups"],
+    "modules-center": ["clock", "custom/weather"],
+    "modules-right": ["cpu", "memory", "temperature", "battery", "pulseaudio", "custom/player", "custom/notification", "custom/power", "tray"],
+
+    "custom/launcher": {
+        "format": "",
+        "on-click": "$HOME/.config/qtile/rofi/launcher.sh",
+        "tooltip": false
+    },
+
+     "custom/power": {
+        "tooltip": false,
+        "on-click": "~/.config/qtile/rofi/rofi-power-menu.sh",
+        "on-click-right": "killall rofi",
+        "format": "⏻ "
+
+    },
+
+    "custom/qtile-groups": {
+         "exec": "cat /tmp/qtile-groups.txt",
+         "interval": "once",
+         "signal": 8,
+         "tooltip": false,
+         "return-type": "text",
+         "pango-markup": true,
+         "on-click": "qtile cmd-obj -o screen -f next_group",
+         "on-scroll-up": "qtile cmd-obj -o screen -f next_group",
+         "on-scroll-down": "qtile cmd-obj -o screen -f prev_group"
+},
+
+    "clock": {
+        "interval": 1,
+        "tooltip-format": "<big>{:%b %d}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%b %d %H:%M:%S %p}",
+        "format-alt": "{:%Y-%m-%d}",
+        "calendar": {
+        "mode": "month",
+        "mode-mon-col": 3,
+        "week-pos": "right",
+        "on-scroll": 1,
+        "format": {
+        "months":     "<span><b>{}</b></span>",
+        "days":       "<span><b>{}</b></span>",
+        "weeks":      "<span><b>W{}</b></span>",
+        "weekdays":   "<span><b>{}</b></span>",
+        "today":      "<span><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+        "on-click-right": "mode",
+        "on-scroll-up": "tz_up",
+        "on-scroll-down": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+        }
+    },
+
+
+    "custom/weather": {
+        "format": "{}",
+        "exec": "~/.local/bin/parse_weather.rb",
+        "interval": 600,
+        "return-type": "json",
+        "tooltip": true
+    },
+
+    "cpu": { "format": " {usage}%", "tooltip": true },
+    "memory": { "format": " {}%", "tooltip": true },
+    "temperature": {
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input",
+        "critical-threshold": 100,
+        "format": " {temperatureC}°C"
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "states": { "warning": 30, "critical": 15 }
+    },
+    
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-icons": {
+        "default-muted": "",
+        "bluetooth": "",
+        "headphones": "",
+        "headset": "",
+        "phone": "",
+        "phone-muted": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+        },
+        "max-volume": 100
+    },
+
+    "custom/player": {
+        "format": "🎵 {}",
+        "exec": "playerctl metadata --format '{{title}} - {{artist}}' 2>/dev/null || echo 'No Player'",
+        "interval": 5,
+        "max-length": 30
+    },
+
+    "custom/notification": {
+        "format": "{icon}",
+        "format-icons": {
+        "notification": "<span foreground='#00ff9f'><sup><small></small></sup></span>",
+        "none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+        "tray": { "icon-size": 18, "spacing": 8 }
+}

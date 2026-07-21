@@ -1,0 +1,52 @@
+* {
+    background-color: #000000;
+    text-color: #00ffff;
+    border-color: #C0C5CE;
+}
+
+window {
+    width: 400px;
+    border: 1px;
+    padding: 25px;
+    background-color: #000000;
+}
+
+mainbox {
+    spacing: 15px;
+    children: [ "message", "listview" ];
+}
+
+message {
+    background-color: transparent;
+    text-color: ##00ffff;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+listview {
+    lines: 6;
+    columns: 1;
+    background-color: transparent;
+}
+
+element {
+    background-color: #1a1a20;
+    padding: 14px 16px;
+    margin: 5px 0px;
+    border: 0px;
+    text-color: #00ffff;
+}
+
+element selected {
+    background-color: #E0DCC8;
+    text-color: #00ffff;
+}
+
+element-icon {
+    size: 20px;
+    margin: 0px 12px 0px 0px;
+}
+
+element-text {
+    text-color: #00ffff;
+}
